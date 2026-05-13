@@ -184,92 +184,6 @@
         }
 
       
-.rodape {
-    position: fixed;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-    width: 320px;
-    padding: 22px;
-    border-radius: 22px;
-    background: rgba(10, 10, 10, 0.55);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-        0 8px 32px rgba(0,0,0,0.45),
-        0 0 25px rgba(255,255,255,0.06),
-        inset 0 1px 1px rgba(255,255,255,0.12);
-
-    cursor: grab;
-    user-select: none;
-    z-index: 9999;
-    transition: 
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-.rodape:active {
-    cursor: grabbing;
-    transform: scale(1.02);
-    box-shadow:
-        0 12px 40px rgba(0,0,0,0.55),
-        0 0 35px rgba(255,255,255,0.12);
-}
-
-
-.perfil h1 {
-    font-size: 1.45rem;
-    color: #fff;
-    margin-bottom: 6px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.perfil p {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.75);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
-}
-
-
-.contato {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.contato a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.88);
-    font-size: 0.95rem;
-    padding: 10px 14px;
-    border-radius: 14px;
-
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-
-    transition: all .25s ease;
-}
-
-.contato a:hover {
-    background: rgba(255,255,255,0.08);
-    transform: translateX(6px);
-    box-shadow: 0 0 14px rgba(255,255,255,0.08);
-}
-
-footer {
-    margin-top: 22px;
-    text-align: center;
-    font-size: 0.68rem;
-    color: rgba(255,255,255,0.42);
-    letter-spacing: 1px;
-}
-
 
     </style>
 </head>
@@ -303,28 +217,6 @@ footer {
 
 
 
-    <div class="rodape">
-         
-             <div class="perfil">
-
-                <h1>Heitor Alves</h1>
-                <p>FRONT-END WEB DEVELOPER</p> 
-              
-
-            </div>
-
-            <div class="contato">
-                <br>
-                <a href="https://github.com/heitorjavascript-debug" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/heitor-alves-3b8380401/" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/hjs.dev/" target="_blank">Instagram</a>
-                <a href="https://heitorjavascript-debug.github.io/meuportfolio/" target="_blank">Portfólio</a>
-            </div>
-
-            <footer>© Desenvolvido por : Heitor Alves - Web Developer</footer>
-            <br>
-           
-    </div>
 
 
     <script>
@@ -341,61 +233,7 @@ footer {
 
 
 
-        const card = document.querySelector('.rodape');
-
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-function startDrag(x, y) {
-    isDragging = true;
-
-    const rect = card.getBoundingClientRect();
-
-    offsetX = x - rect.left;
-    offsetY = y - rect.top;
-
-    card.style.transition = "none";
-}
-
-function drag(x, y) {
-    if (!isDragging) return;
-
-    card.style.left = `${x - offsetX}px`;
-    card.style.top = `${y - offsetY}px`;
-    card.style.right = "auto";
-    card.style.bottom = "auto";
-    card.style.transform = "none";
-}
-
-function stopDrag() {
-    isDragging = false;
-    card.style.transition = "box-shadow .25s ease";
-}
-
-/* MOUSE */
-card.addEventListener('mousedown', (e) => {
-    startDrag(e.clientX, e.clientY);
-});
-
-document.addEventListener('mousemove', (e) => {
-    drag(e.clientX, e.clientY);
-});
-
-document.addEventListener('mouseup', stopDrag);
-
-/* TOUCH */
-card.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0];
-    startDrag(touch.clientX, touch.clientY);
-});
-
-document.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    drag(touch.clientX, touch.clientY);
-});
-
-document.addEventListener('touchend', stopDrag);
+    
 
     </script>
 </body>
