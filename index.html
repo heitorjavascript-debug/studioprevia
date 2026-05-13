@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Studio Yasmin Duarte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+
+        :root {
+            --rosa-suave: #fae1e8;
+            --rosa-fundo: #fdf5f7;
+            --dourado-suave: #d4af37;
+            --dourado-claro: #f3dca3;
+            --texto-escuro: #4a4a4a;
+            --texto-claro: #7a7a7a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--rosa-fundo) 0%, var(--rosa-suave) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden; 
+            padding: 20px; 
+        }
+
+       
+        .shape {
+            position: absolute;
+            filter: blur(8px);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .shape1 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--rosa-suave), #fff);
+            border-radius: 50%;
+            top: 5%;
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--dourado-claro), transparent);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            bottom: 5%;
+            right: -10px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+       
+        .glass-container {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.1);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            color: var(--texto-escuro);
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .categoria {
+            color: var(--dourado-suave);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .destaque {
+            font-size: 1.3rem;
+            color: var(--texto-escuro);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .servicos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .servicos span {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--texto-escuro);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .servicos :hover {
+            background: rgba(255, 171, 171, 0.9);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+            transition: all 0.8s ease;
+        }
+
+        .endereco {
+            font-size: 0.85rem;
+            color: var(--texto-claro);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        
+        .btn-agendar {
+            background: linear-gradient(135deg, var(--dourado-suave) 0%, #e6c567 100%);
+            color: #fff;
+            border: none;
+            padding: 16px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block; 
+            width: 100%;
+        }
+
+        .btn-agendar:hover {
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-agendar:active {
+            transform: translateY(1px);
+        }
+
+        
+        @media (max-width: 360px) {
+            .glass-container {
+                padding: 30px 20px;
+            }
+            .logo { font-size: 1.4rem; }
+            .destaque { font-size: 1.15rem; }
+            .servicos span { font-size: 0.75rem; padding: 6px 10px; }
+        }
+
+      
+.rodape {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    width: 320px;
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.45),
+        0 0 25px rgba(255,255,255,0.06),
+        inset 0 1px 1px rgba(255,255,255,0.12);
+
+    cursor: grab;
+    user-select: none;
+    z-index: 9999;
+    transition: 
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.rodape:active {
+    cursor: grabbing;
+    transform: scale(1.02);
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.55),
+        0 0 35px rgba(255,255,255,0.12);
+}
+
+
+.perfil h1 {
+    font-size: 1.45rem;
+    color: #fff;
+    margin-bottom: 6px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.perfil p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contato a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.88);
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: all .25s ease;
+}
+
+.contato a:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(6px);
+    box-shadow: 0 0 14px rgba(255,255,255,0.08);
+}
+
+footer {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.42);
+    letter-spacing: 1px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+
+    <div class="glass-container">
+        <h1 class="logo">Studio<br>Yasmin Duarte</h1>
+        <p class="categoria">Esmalteria</p>
+        
+        <h2 class="destaque">Unhas impecáveis✨</h2>
+        
+        <div class="servicos">
+            <span>Molde F1</span>
+            <span>Tip</span>
+            <span>Blindagem</span>
+            <span>Postiça realista</span>
+        </div>
+
+        <div class="endereco">
+            <span>📍 Tv. Assaré, 241</span>
+            <span>Crato - CE</span>
+        </div>
+
+        <button class="btn-agendar" id="whatsappBtn">
+            Agende seu horário VIP 👇
+        </button>
+    </div>
+
+
+
+    <div class="rodape">
+         
+             <div class="perfil">
+
+                <h1>Heitor Alves</h1>
+                <p>FRONT-END WEB DEVELOPER</p> 
+              
+
+            </div>
+
+            <div class="contato">
+                <br>
+                <a href="https://github.com/heitorjavascript-debug" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/heitor-alves-3b8380401/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/hjs.dev/" target="_blank">Instagram</a>
+                <a href="https://heitorjavascript-debug.github.io/meuportfolio/" target="_blank">Portfólio</a>
+            </div>
+
+            <footer>© Desenvolvido por : Heitor Alves - Web Developer</footer>
+            <br>
+           
+    </div>
+
+
+    <script>
+        const btnAgendar = document.getElementById('whatsappBtn');
+        
+        btnAgendar.addEventListener('click', () => {
+            const numeroTelefone = "5588921856668";
+            const mensagem = encodeURIComponent("Olá! Vim pelo site e gostaria de agendar meu horário VIP no Studio Yasmin Duarte.");
+            const linkWhatsApp = `https://wa.me/${numeroTelefone}?text=${mensagem}`;
+            
+            window.open(linkWhatsApp, '_blank');
+        });
+
+
+
+
+        const card = document.querySelector('.rodape');
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+function startDrag(x, y) {
+    isDragging = true;
+
+    const rect = card.getBoundingClientRect();
+
+    offsetX = x - rect.left;
+    offsetY = y - rect.top;
+
+    card.style.transition = "none";
+}
+
+function drag(x, y) {
+    if (!isDragging) return;
+
+    card.style.left = `${x - offsetX}px`;
+    card.style.top = `${y - offsetY}px`;
+    card.style.right = "auto";
+    card.style.bottom = "auto";
+    card.style.transform = "none";
+}
+
+function stopDrag() {
+    isDragging = false;
+    card.style.transition = "box-shadow .25s ease";
+}
+
+/* MOUSE */
+card.addEventListener('mousedown', (e) => {
+    startDrag(e.clientX, e.clientY);
+});
+
+document.addEventListener('mousemove', (e) => {
+    drag(e.clientX, e.clientY);
+});
+
+document.addEventListener('mouseup', stopDrag);
+
+/* TOUCH */
+card.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    startDrag(touch.clientX, touch.clientY);
+});
+
+document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    drag(touch.clientX, touch.clientY);
+});
+
+document.addEventListener('touchend', stopDrag);
+
+    </script>
+</body>
+</html>
